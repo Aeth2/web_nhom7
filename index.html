@@ -97,6 +97,48 @@
     
     /* Footer */
     footer { background: #333; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
+    
+    .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .dropdown-content a:hover .thumbnail {
+    opacity: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
   </style>
 </head>
 <body>
@@ -122,7 +164,17 @@
       <nav>
         <ul>
           <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="category.html">Danh mục</a></li>
+          <li class="dropdown">
+              <a href="category.html">Danh mục</a>
+              <div class="dropdown-content">
+    <a href="products.html?cat=nuochoa">Nước hoa 
+<img class="thumbnail" src="https://i.pinimg.com/736x/84/63/ed/8463ed973cc26cbe84d2f33a8977a1b3.jpg" alt="Nước hoa"></a>
+    <a href="products.html?cat=kemduong">Kem dưỡng 
+<img class="thumbnail" src="https://i.pinimg.com/736x/08/7a/4a/087a4acf6a269e73a4ad972a7d6068ad.jpg" alt="Kem dưỡng"></a>
+    <a href="products.html?cat=sonmoi">Son môi 
+<img class="thumbnail" src="https://i.pinimg.com/736x/27/37/a9/2737a9fbaa07ea9dd88c719a413e603c.jpg" alt="Son môi"></a>
+  </div>
+          </li>
           <li><a href="contact.html">Liên hệ</a></li>
         </ul>
       </nav>
